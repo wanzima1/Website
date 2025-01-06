@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Visilica International School</title>
+    <link rel="stylesheet" href="admin-dashboard-styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <div class="dashboard-container">
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://via.placeholder.com/50" alt="Visilica International School Logo">
+                <h2>Admin Dashboard</h2>
+            </div>
+            <ul class="sidebar-menu">
+                <li class="active"><a href="#overview"><i class="fas fa-tachometer-alt"></i> Overview</a></li>
+                <li><a href="#programs"><i class="fas fa-graduation-cap"></i> Programs</a></li>
+                <li><a href="#events"><i class="fas fa-calendar-alt"></i> Events</a></li>
+                <li><a href="#news"><i class="fas fa-newspaper"></i> News</a></li>
+                <li><a href="#admissions"><i class="fas fa-user-plus"></i> Admissions</a></li>
+                <li><a href="#users"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="#settings"><i class="fas fa-cog"></i> Settings</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <header class="content-header">
+                <h1>Welcome, Admin</h1>
+                <div class="user-info">
+                    <img src="https://via.placeholder.com/40" alt="Admin Avatar">
+                    <span>John Doe</span>
+                </div>
+            </header>
+            <section id="overview" class="dashboard-section">
+                <h2>Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-user-graduate"></i>
+                        <h3>Total Students</h3>
+                        <p id="total-students">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                        <h3>Total Teachers</h3>
+                        <p id="total-teachers">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-book"></i>
+                        <h3>Programs</h3>
+                        <p id="total-programs">Loading...</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Upcoming Events</h3>
+                        <p id="upcoming-events">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            <section id="programs" class="dashboard-section">
+                <h2>Programs</h2>
+                <button id="add-program" class="action-button">Add New Program</button>
+                <table id="programs-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Program data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="events" class="dashboard-section">
+                <h2>Events</h2>
+                <button id="add-event" class="action-button">Add New Event</button>
+                <table id="events-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Event data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="news" class="dashboard-section">
+                <h2>News</h2>
+                <button id="add-news" class="action-button">Add News Item</button>
+                <table id="news-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Summary</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- News data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="admissions" class="dashboard-section">
+                <h2>Admissions</h2>
+                <table id="admissions-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Grade</th>
+                            <th>Application Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Admissions data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="users" class="dashboard-section">
+                <h2>Users</h2>
+                <button id="add-user" class="action-button">Add New User</button>
+                <table id="users-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- User data will be dynamically inserted here -->
+                    </tbody>
+                </table>
+            </section>
+            <section id="settings" class="dashboard-section">
+                <h2>Settings</h2>
+                <form id="settings-form">
+                    <div class="form-group">
+                        <label for="school-name">School Name</label>
+                        <input type="text" id="school-name" name="school-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="school-email">School Email</label>
+                        <input type="email" id="school-email" name="school-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="school-phone">School Phone</label>
+                        <input type="tel" id="school-phone" name="school-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="school-address">School Address</label>
+                        <textarea id="school-address" name="school-address" required></textarea>
+                    </div>
+                    <button type="submit" class="action-button">Save Settings</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="admin-dashboard-scripts.js"></script>
+</body>
+</html>

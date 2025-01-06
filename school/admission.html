@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission - Visilica International School</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <!-- Same header as index.html -->
+    </header>
+
+    <main>
+        <section class="admission-hero">
+            <h1>Join Visilica International School</h1>
+            <p>Embark on a journey of academic excellence and personal growth</p>
+        </section>
+
+        <section class="admission-process">
+            <h2>Admission Process</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>1. Application</h3>
+                    <p>Complete and submit the online application form</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>2. Document Submission</h3>
+                    <p>Provide necessary documents and transcripts</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-user-graduate"></i>
+                    <h3>3. Entrance Exam</h3>
+                    <p>Take the required entrance examination</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-comments"></i>
+                    <h3>4. Interview</h3>
+                    <p>Participate in a personal interview with our admissions team</p>
+                </div>
+                <div class="step">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>5. Decision</h3>
+                    <p>Receive the admissions decision</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="admission-form">
+            <h2>Start Your Application</h2>
+            <form id="admission-form">
+                <div class="form-group">
+                    <label for="student-name">Student's Full Name</label>
+                    <input type="text" id="student-name" name="student-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="date-of-birth">Date of Birth</label>
+                    <input type="date" id="date-of-birth" name="date-of-birth" required>
+                </div>
+                <div class="form-group">
+                    <label for="grade-applying">Grade Applying For</label>
+                    <select id="grade-applying" name="grade-applying" required>
+                        <option value="">Select Grade</option>
+                        <option value="6">Grade 6</option>
+                        <option value="7">Grade 7</option>
+                        <option value="8">Grade 8</option>
+                        <option value="9">Grade 9</option>
+                        <option value="10">Grade 10</option>
+                        <option value="11">Grade 11</option>
+                        <option value="12">Grade 12</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="parent-name">Parent/Guardian Name</label>
+                    <input type="text" id="parent-name" name="parent-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-email">Parent/Guardian Email</label>
+                    <input type="email" id="parent-email" name="parent-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="parent-phone">Parent/Guardian Phone</label>
+                    <input type="tel" id="parent-phone" name="parent-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="current-school">Current School</label>
+                    <input type="text" id="current-school" name="current-school" required>
+                </div>
+                <button type="submit" class="cta-button">Submit Application</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Same footer as index.html -->
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('admission-form').addEventListener('submit', async (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            try {
+                const response = await fetch('/api/admission', {
+                    method: 'POST',
+                    body: formData
+                });
+                if (response.ok) {
+                    alert('Thank you for submitting your application. We will contact you soon with further instructions.');
+                    event.target.reset();
+                } else {
+                    throw new Error('Failed to submit application');
+                }
+            } catch (error) {
+                console.error('Error submitting application:', error);
+                alert('There was an error submitting your application. Please try again later.');
+            }
+        });
+    </script>
+</body>
+</html>
